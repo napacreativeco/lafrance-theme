@@ -50,6 +50,9 @@
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
   
+  {{ settings.background_video | video_tag }}
+  {{ settings.background_video_mobile | video_tag }}
+
   <header>
     {% comment %}
       Note on checkout link: it is a good idea to avoid linking to /checkout directly because shops that use 
