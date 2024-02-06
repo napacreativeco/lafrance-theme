@@ -4,26 +4,29 @@
     justify-content: space-between;
     padding: 30px;
     height: 100vh;
+    width: 25vw;
+    max-width: 240px;
 
-    .image {
-
+    .upper {
+        display: flex;
+        flex-direction: column;
     }
 
     svg {
         width: 220px;
-        max-width: 15vw;
+        max-width: 100%;
         display: block;
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 14px;
         font-family: var(--abc-thick);
         text-transform: uppercase;
     }
 
     ul {
         a {
-            font-size: 20px;
+            font-size: 1.6vw;
         }
     }
 

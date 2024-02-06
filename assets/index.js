@@ -1,5 +1,7 @@
 (function($) {
 
+    $('main').css('opacity', '0');
+
     $(document).on('ready', function() {
 
       $('.progress-indicator').css({
@@ -11,6 +13,7 @@
 
       setTimeout(function() {
         $('.preloader').fadeOut();
+        $('main').css('opacity', '1');
       }, 3000);
 
       //$('.preloader-content').addClass('shrink');

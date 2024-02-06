@@ -4,39 +4,24 @@
 
 {{ 'page--product.css' | asset_url | stylesheet_tag }}
 
-<style>
-
-  .swiper, swiper-container {
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
-  }
-</style>
 <div class="page-container" data-page="collection" itemscope itemtype="http://schema.org/Product">
   
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
-  <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
+  <meta itemprop="image" content="{{ product | image_url: 700 }}" />
   
   <form action="/cart/add" method="post" enctype="multipart/form-data">
     
-    <div data-ajax-cart-messages="form" > 
-      <!-- Errors and messages appear here --> 
-    </div>
-
+    <div data-ajax-cart-messages="form"></div>
 
     <div class="product--wrapper">
 
       {% comment %} IMAGE {% endcomment %}
       <div class="product-image">
-          <div class="scroll-wrapper">
-            {% for image in product.images %}
-
-              <div class="image">
-                  <img src="{{ image | img_url: 'large' }}" alt="{{ image.alt | escape }}" />
-              </div>
-
-            {% endfor %}
-
+        {% for image in product.images %}
+          <div class="image">
+            <img src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
           </div>
+        {% endfor %}
       </div>
 
 
@@ -44,7 +29,9 @@
       <div class="product-data">
         
         <div class="title">
-          <h1 class="product-title" itemprop="title">{{ product.title }}</h1>
+          <h1 class="product-title" itemprop="title">
+            {{ product.title }}
+          </h1>
         </div>
 
         <p class="product-description" itemprop="description">
@@ -143,8 +130,6 @@
         <div id="product-add">
           <input type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
         </div>
-
-        <div data-ajax-cart-messages="{{ item.key }}"></div>
 
       </div>
 
