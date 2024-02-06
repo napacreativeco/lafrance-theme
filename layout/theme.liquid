@@ -27,6 +27,33 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
+  <style>
+    @font-face {
+      font-family: 'Bullet';
+      src: url('{{ "Bullet-Regular.woff2" | asset_url }}') format('woff2'),
+          url('{{ "Bullet-Regular.woff" | asset_url }}') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'ABC';
+      src: url('{{ "ABCMonumentGrotesk-Regular.woff2" | asset_url }}') format('woff2'),
+          url('{{ "ABCMonumentGrotesk-Regular.woff" | asset_url }}') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'ABC Thick';
+      src: url('{{ "ABCMonumentGrotesk-Heavy.woff2" | asset_url }}') format('woff2'),
+          url('{{ "ABCMonumentGrotesk-Heavy.woff" | asset_url }}') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
   {{ 'index.css' | asset_url | stylesheet_tag }}
 
   <!--[if lt IE 9]>
@@ -49,129 +76,132 @@
 </head>
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
-  
-  {{ settings.background_video | video_tag }}
-  {{ settings.background_video_mobile | video_tag }}
 
-  <header>
-    {% comment %}
-      Note on checkout link: it is a good idea to avoid linking to /checkout directly because shops that use 
-      Paypal Express Checkout and/or Google Checkout have special checkout buttons on the /cart page. Also,
-      special instructions for the seller are entered on the /cart page. Finally, the universal tracking code 
-      of Google Analytics may not work if linking directly to the /checkout page.
-    {% endcomment %}
+  <div class="site-container">
+
+    <div class="background-videos desktop">
+      {{ settings.background_video | video_tag: autoplay: true, loop: true, muted: true }}
+    </div>
+    <div class="background-videos mobile">
+      {{ settings.background_video_mobile | video_tag: autoplay: true, loop: true, muted: true }}
+    </div>
+
+    {% render 'component--preloader' %}
+
+    {% render 'component--cart-link' %}
     
-    <a href="/cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a>
-          
-    {% if shop.customer_accounts_enabled %}
-      {% if customer %}
-        Logged in as <a href="/account">{{ customer.first_name }}</a> · {{ 'Log out' | customer_logout_link }}
-      {% else %}
-        {{ 'Log in' | customer_login_link }}
-        {% if shop.customer_accounts_optional %}
-        or {{ 'Create an account' | customer_register_link }}
-        {% endif %}
-      {% endif %}
-    {% endif %}
-    
-    {% comment %}
-      It would be nice if the logo was a shop setting, rather than a theme setting.
-      But for now, it is a theme setting. The shop logo is uploaded on the theme settings page.
-      Link to the theme settings page of currently published theme will always be:
-      http://www.shopify.com/admin/themes/current/settings.
-      To add theme settings to a theme, see this: http://docs.shopify.com/themes/theme-templates/settings
-      Theme settings are added to http://www.shopify.com/admin/themes/current#config/settings.html
-    {% endcomment %}
+    {% render 'component--sidebar' %}
 
-    {% if settings.use_logo %}
-      <a id="logo" href="/">
-        {{ 'logo.png' | asset_url | img_tag: shop.name }}
-      </a>
-    {% else %}
-      <a id="site-title" href="/">
-        {{ shop.name }}
-      </a>
-    {% endif %}
+    <div class="cart-drawer">
+      {% section 'cart-drawer' %}
+    </div>
 
-    {% comment %}
-      Main Navigation 
-    {% endcomment %}
-    {% include 'site-nav' %}
-
-  </header>
-
-  {% comment %}
-    IE8 and IE9 don't support the HTML5 placeholder attribute, so it's a good idea to use JavaScript
-    to show and hide the placeholder text.
-    Have a look in assets/shop.js.liquid to see sample JavaScript for this.
-  {% endcomment %}      
-  <form action="/search" method="get" class="search-form right" role="search">
-    <input name="q" type="search" id="search-field" placeholder="Search store..." value="{{ search.terms | escape }}" />
-    <input type="submit" id="search-submit" value="Search" />
-  </form>
-
-  {% comment %}}
-    We have a template file to render.
-    That's what content_for_layout is for.
-  {% endcomment %}
-  <main role="main">
-    {{ content_for_layout }}
-  </main>
+    <main role="main">
+        {{ content_for_layout }}
+    </main>
+  </div>
 
   <footer>
-    Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.
+    <div class="row">
+
+      <div class="cell policies">
+        <ul>
+          {% for link in linklists.footer.links %}
+            <li>
+              <a href="{{ link.url }}" title="{{ link.title }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="cell newsletter">
+        {% form 'customer' %}
+          <div class="email">
+            <label for="email" style="display: none;">Email</label>
+            <input type="email" placeholder="EMAIL ADDRESS" name="contact[email]" />
+          </div>
+        
+          <div class="submit">
+            <input type="submit" value="Sign up" />
+          </div>
+        {% endform %}
+      </div>
+
+      <div class="cell contact">
+        <div>
+          social icons
+        </div>
+        <div>
+          &copy; {{ shop.name }} {{ "now" | date: "%Y" }}
+        </div>
+      </div>
+
+    </div>
   </footer>
 
   <script type="application/json" data-ajax-cart-initial-state>
-  {{ cart | json }}
-</script>
+    {{ cart | json }}
+  </script>
 
-<script type="module">
-  import '{{ "liquid-ajax-cart-v1.11.0.js" | asset_url }}';
-</script>
+  <script type="module">
+    import '{{ "liquid-ajax-cart-v1.11.0.js" | asset_url }}';
+  </script>
 
-<script type="application/json" data-ajax-cart-configuration >
-  {
-    "addToCartCssClass": "js-my-cart-open"
-  }
-</script>
-
-{{ 'format_money.js' | asset_url | script_tag }}
-<script type="module">
-  import { subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart-v1.11.0.js" | asset_url }}'
-
-
-  let USDollar = new Intl.NumberFormat('en-US', {
-    style: 'decimal',
-    maximumFractionDigits: 0,
-    trailingZeroDisplay: 'stripIfInteger'
-  });
-
-  subscribeToCartStateUpdate(( state, isCartUpdated ) => {
-    var total = Shopify.formatMoney(state.cart.total_price);
-    var subtotal = Shopify.formatMoney(state.cart.items_subtotal_price);
-    $('.total-value').text(total.substring(0, subtotal.length - 3));
-    $('.subtotal-value').text(subtotal.substring(0, subtotal.length - 3));
-  });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
+  <script type="application/json" data-ajax-cart-configuration >
+    {
+      "addToCartCssClass": "js-my-cart-open"
     }
-  });
-</script>
+  </script>
 
-{{ 'shop.js'  | asset_url | script_tag }}
-{{ 'index.js' | asset_url | script_tag }}
+  {{ 'format_money.js' | asset_url | script_tag }}
+  <script type="module">
+    import { subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart-v1.11.0.js" | asset_url }}'
+
+
+    let USDollar = new Intl.NumberFormat('en-US', {
+      style: 'decimal',
+      maximumFractionDigits: 0,
+      trailingZeroDisplay: 'stripIfInteger'
+    });
+
+    subscribeToCartStateUpdate(( state, isCartUpdated ) => {
+      var total = Shopify.formatMoney(state.cart.total_price);
+      var subtotal = Shopify.formatMoney(state.cart.items_subtotal_price);
+      $('.total-value').text(total.substring(0, subtotal.length - 3));
+      $('.subtotal-value').text(subtotal.substring(0, subtotal.length - 3));
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    // const swiper = new Swiper('.swiper', {
+    //   // Optional parameters
+    //   direction: 'horizontal',
+    //   loop: true,
+
+    //   // If we need pagination
+    //   pagination: {
+    //     el: '.swiper-pagination',
+    //     clickable: true
+    //   }
+    // });
+
+    const sswiper = new Swiper('.product-gallery-swiper', {
+      // Optional parameters
+      direction: 'vertical',
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      slidesPerView: 1
+    });
+  </script>
+
+  {{ 'shop.js'  | asset_url | script_tag }}
+  {{ 'index.js' | asset_url | script_tag }}
 
 
 </body>

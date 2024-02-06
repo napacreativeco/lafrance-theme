@@ -1,0 +1,28 @@
+<div class="preloader">
+
+    <div class="preloader-wrap">
+
+        <div class="background-videos desktop">
+            {{ settings.background_video | video_tag: autoplay: true, loop: true, muted: true }}
+        </div>
+        <div class="background-videos mobile">
+            {{ settings.background_video_mobile | video_tag: autoplay: true, loop: true, muted: true }}
+        </div>
+
+
+        <div class="preloader-content">
+            <div class="image">
+                {% render 'icon--globe' %}
+            </div>
+            <div class="progress-container">
+                <div class="start">LOADING</div>
+                <div class="progress-bar">
+                    <div class="progress-indicator"></div>
+                </div>
+                <div class="end">1 of 1</div>
+            </div>
+        </div>
+
+    </div>
+ 
+</div>

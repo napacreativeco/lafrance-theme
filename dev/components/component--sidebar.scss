@@ -1,0 +1,30 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    height: 100vh;
+
+    .image {
+
+    }
+
+    svg {
+        width: 220px;
+        max-width: 15vw;
+        display: block;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-family: var(--abc-thick);
+        text-transform: uppercase;
+    }
+
+    ul {
+        a {
+            font-size: 20px;
+        }
+    }
+
+}

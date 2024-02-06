@@ -1,0 +1,1 @@
+.sidebar{display:flex;flex-direction:column;justify-content:space-between;padding:30px;height:100vh}.sidebar svg{width:220px;max-width:15vw;display:block}.sidebar h3{font-size:20px;font-family:var(--abc-thick);text-transform:uppercase}.sidebar ul a{font-size:20px}

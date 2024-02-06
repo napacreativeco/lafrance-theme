@@ -1,0 +1,45 @@
+<div class="cart-drawer--wrapper">
+
+    <div class="cart-drawer--close">
+      {% render 'icon--close' %}
+    </div>
+
+    <form action="{{ routes.cart_url }}" method="post" class="my-cart" data-ajax-cart-section>
+    
+        <ul class="cart-items" data-ajax-cart-section-scroll>
+            {% for item in cart.items %}
+                {% assign item_index = forloop.index %}
+
+                {% if cart.items.size > 0 %}
+                    {% render 'card--product-cart', item: item, item_index: item_index %}
+                {% else %}
+                    <p style="color: white">no products</p>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <div class="cart-total">
+            <table>
+                <tr>
+                    <td class="total-label">Total</td>
+                    <td>{{ cart.total_price | money_without_trailing_zeros }}</td>
+                </tr>
+                <tr>
+                    <td class="total-label">Tax</td>
+                    <td>{{ cart.total_price | money_without_trailing_zeros }}</td>
+                </tr>
+                <tr>
+                    <td class="total-label">Subtotal</td>
+                    <td>{{ cart.total_price | money_without_trailing_zeros }}</td>
+                </tr>
+            </table>
+
+            <button type="submit" name="checkout">
+                {{ 'Check out' | escape }}
+            </button> 
+        
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,30 @@
+{{ 'component--sidebar.css' | asset_url | stylesheet_tag }}
+
+<section class="sidebar">
+
+    <div class="image">
+        <a href="/">
+            {% render 'icon--alien' %}
+        </a>
+    </div>
+
+    <ul>
+        <li>
+            <h3>Categories</h3>
+        </li>
+        {% for l in linklists.main-menu.links %}
+
+            <li>
+            <a href="{{ l.url }}" title="{{ l.title }}">{{ l.title }}</a>
+            </li>
+            
+        {% endfor %}
+    </ul>
+
+    <div class="image">
+        <a href="/">
+            {% render 'icon--globe' %}
+        </a>
+    </div>
+
+</section>

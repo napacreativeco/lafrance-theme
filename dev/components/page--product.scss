@@ -1,0 +1,132 @@
+.product--wrapper {
+
+    --big-font: 32px;
+    --small-font: 14px;
+    --spacing: 24px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+
+
+    .swiper {
+        width: 100%;
+        max-width: 50vh;
+        height: auto;
+        max-height: 65vh;
+
+        .swiper-slide {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .swiper-controls {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    h1.product-title {
+        font-family: var(--robot-font);
+        font-weight: 100;
+        text-transform: uppercase;
+        font-size: var(--big-font);
+        display: block;
+        margin-bottom: var(--spacing);
+    }
+
+    .product-description {
+        font-size: var(--small-font);
+        line-height: 1.2;
+    }
+
+    input[type="submit"] {
+        font-family: var(--robot-font);
+        font-weight: 100;
+        text-transform: uppercase;
+        font-size: var(--big-font);
+        color: var(--white);
+        background: transparent;
+        padding: 0px;
+        border: 0px;
+        outline: 0px;
+        display: block; 
+        cursor: pointer;      
+    }
+
+    input[type="submit"]:hover {
+        color: var(--pink);
+        transition: 0.2s ease-in-out;
+    }
+
+    .price {
+        font-family: var(--robot-font);
+        font-size: var(--big-font);
+        padding-left: 20px;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 14px;
+    }
+
+}   
+
+
+/* 
+   ====================================================
+   MOBILE
+   ====================================================
+*/
+@media screen and (max-width: 769px) {
+
+    .product--wrapper {
+
+        --big-font: 26px;
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .product-image {
+            padding-top: 0px;
+        }
+
+        .swiper {
+            max-width: 100vw;
+            max-height: auto !important;
+            height: 100%;
+            overflow-y: visible;
+        }
+
+        h1.product-title {
+            font-family: var(--robot-font);
+            font-weight: 100;
+            text-transform: uppercase;
+            display: block;
+            margin: 20px 0;
+            line-height: 1.3;
+        }
+
+        ul {
+            flex-wrap: nowrap;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: 6fr 2fr;
+            grid-gap: 6px;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+    }
+    
+}

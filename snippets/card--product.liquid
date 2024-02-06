@@ -1,0 +1,21 @@
+<li class="product-card">
+    
+    <div class="image">
+        <a href="{{ product.url }}" title="{{ product.title }}">
+            <img src="{{ product.featured_image | img_url: '900x' }}" alt="{{ product.title }}" />
+        </a>
+    </div>
+
+    <div class="title">
+        <a href="{{ product.url }}" title="{{ product.title }}">
+            <h2 class="product-title">
+                {{ product.title }}
+            </h2>
+        </a>
+    </div>
+
+    <div class="price">
+        {{ product.price | money_without_trailing_zeros }}
+    </div>
+
+</li>

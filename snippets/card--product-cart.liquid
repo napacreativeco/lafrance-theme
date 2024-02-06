@@ -1,0 +1,63 @@
+<li class="cart-card">
+
+    <div class="left">
+
+        <div class="image">
+            <img src="{{ item.product.featured_image | image_url: width: 500  }}" alt="{{ item.product.title }}">
+        </div>
+
+        <div class="data">
+            <div class="cart-item--title">
+                <a href="{{ item.url }}" title="{{ item.title }}">
+                    <span>
+                        {{ item.product.vendor }}
+                    </span>
+                </a>
+                <a href="{{ item.url }}" title="{{ item.title }}">
+                    <h2>
+                        {{ item.product.title }}
+                    </h2>
+                </a>
+            </div>
+
+            <div class="quantity">
+                <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
+                    - 
+                </a>
+        
+                <!-- data-ajax-cart-quantity-input ajaxifies the line item quantity input -->
+                <input data-ajax-cart-quantity-input="{{ item_index }}"
+                    name="updates[]" 
+                    value="{{ item.quantity }}" 
+                    type="number" />
+        
+                <!-- data-ajax-cart-request-button ajaxifies the "Plus one" button -->
+                <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
+                    +
+                </a>
+                {% comment %} <input data-ajax-cart-quantity-input="{{ forloop.index }}" name="updates[]" value="{{ item.quantity }}" type="number" /> {% endcomment %}
+            </div>
+
+            <div class="remove-item">
+                <a data-ajax-cart-request-button href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0">remove from cart</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="right">
+
+            <div class="item-total">
+                {{ item.final_line_price | money_without_trailing_zeros }}
+            </div>
+
+
+
+    </div>
+
+
+
+
+
+</li>

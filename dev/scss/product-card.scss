@@ -1,0 +1,37 @@
+.product-card {
+
+    .image {
+        width: 100%;
+        display: block;
+        margin: 0 0 20px 0;
+         filter: drop-shadow(rgba(256, 169, 209, 1) 0px 0px 10px);
+
+        a {
+            display: block;
+        }
+
+        img {
+            display: block;
+            
+            /* in order: x offset, y offset, blur size, spread size, color */
+        }
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-family: var(--bullet);
+        margin: 0 0 4px 0;
+        line-height: 1.0;
+    }
+
+    .price {
+        text-align: center;
+        font-family: var(--abc-thick);
+        font-size: 18px;
+    }
+
+}
