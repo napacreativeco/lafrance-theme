@@ -16,15 +16,11 @@
         $('main').css('opacity', '1');
       }, 3000);
 
-      //$('.preloader-content').addClass('shrink');
-
     });
-    // $('.cart-nav-opener').on('click', function() {
-    //     $('body').addClass('js-my-cart-open');
-    //   });
-      $('.cart-drawer--close').on('click', function() {
-        $('body').removeClass('js-my-cart-open');
-      });
+
+    $('.cart-drawer--close').on('click', function() {
+      $('body').removeClass('js-my-cart-open');
+    });
 
 
 
@@ -35,6 +31,7 @@
         var scrollPosition = $(window).height() + $(window).scrollTop();
         
         if ((scrollHeight - scrollPosition) / scrollHeight <= 0) {
+          
           setTimeout(function() {
             $('footer').css('height', 'auto');
           }, 300);
@@ -44,8 +41,7 @@
           }, 1000);
 
         }
-
-  
+        
       });
       
 
