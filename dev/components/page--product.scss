@@ -31,6 +31,25 @@
         }
     }
 
+    .product-image::-webkit-scrollbar {
+        display: none;
+    }
+      
+    /* Track */
+    .product-image::-webkit-scrollbar-track {
+        background: transparent;
+    }
+      
+    /* Handle */
+    .product-image::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+      
+    /* Handle on hover */
+    .product-image::-webkit-scrollbar-thumb:hover {
+        background: transparent;
+    }
+
     // Data
     .product-data {
         overflow: hidden;
