@@ -87,6 +87,7 @@ main {
     }
 
 }
+
 img {
     width: 100%;
 }
@@ -107,6 +108,21 @@ a {
     font-weight: 100;
 }
 
+.default-page {
+    padding: 50px 30px;
+}
+
+.default-content p,
+.default-content span {
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.page-content.faq-page {
+    padding-right: 30px;
+}
 
 /*
 * Open/Close Cart Drawer
@@ -114,7 +130,6 @@ a {
 .js-my-cart-open .cart-drawer {
     transform: translateX(0px);
 }
-
 
 /*
 * Background Videos
