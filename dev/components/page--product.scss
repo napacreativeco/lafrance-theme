@@ -25,6 +25,7 @@
             display: flex;
             align-items: center;
             padding: 20% 20px;
+            filter: drop-shadow(rgba(256, 169, 209, 1) 0px 0px 10px);
         }
 
         img {
@@ -60,14 +61,21 @@
         gap: 0px;
     }
 
+    .product-vendor {
+        font-size: 20px;
+        text-transform: uppercase;
+
+        margin: 0 0 0 0;
+    }
+
     // Title
     h1.product-title {
-        font-family: var(--robot-font);
+        font-family: var(--bullet);
         font-weight: 100;
-        text-transform: uppercase;
-        font-size: var(--big-font);
+        font-size: 52px;
         display: block;
         margin: 0px;
+        padding: 0;
     }
 
     // Description
@@ -137,7 +145,7 @@
     label {
         background: transparent;
         color: var(--white);
-        font-size: var(--big-font);
+        font-size: 20px;
         line-height: 0;
         border: 1px solid var(--white);
         display: flex;
