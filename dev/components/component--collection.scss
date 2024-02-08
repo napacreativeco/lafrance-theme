@@ -10,6 +10,7 @@
     .product-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        padding: 100px 30px 40px 30px;
     }
 
 }
