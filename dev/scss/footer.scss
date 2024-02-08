@@ -17,7 +17,7 @@ footer {
 
     a {
         text-transform: uppercase;
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .policies {
@@ -58,7 +58,7 @@ footer {
             background: transparent;
             color: var(--white);
             border: 0;
-            font-size: 20px;
+            font-size: 14px;
         }
 
         input[type="email"]::placeholder {
@@ -73,7 +73,7 @@ footer {
             border: 0;
             cursor: pointer;
             padding: 0;
-            font-size: 20px;
+            font-size: 14px;
         }
 
         input[type="submit"]:hover {
@@ -84,7 +84,7 @@ footer {
     }
 
     .contact {
-        font-size: 20px;
+        font-size: 14px;
         display: flex;
         flex-direction: row;
         align-items: center;
