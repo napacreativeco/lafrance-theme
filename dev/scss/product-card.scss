@@ -4,7 +4,7 @@
         width: 100%;
         display: block;
         margin: 0 0 20px 0;
-         filter: drop-shadow(rgba(256, 169, 209, 1) 0px 0px 10px);
+        filter: drop-shadow(rgba(256, 169, 209, 1) 0px 0px 10px);
 
         a {
             display: block;
@@ -12,19 +12,11 @@
 
         img {
             display: block;
-            
-            /* in order: x offset, y offset, blur size, spread size, color */
         }
     }
 
     .title {
         text-align: center;
-    }
-
-    .title:hover {
-        h2 {
-            text-shadow: 0 0 2px rgba(256, 169, 209, 0.8), 0 0 4px rgba(256, 169, 209, 0.6), 0 0 6px rgba(256, 169, 209, 0.4), 0 0 8px rgba(256, 169, 209, 0.2);
-        }
     }
 
     h2 {
@@ -39,6 +31,14 @@
         text-align: center;
         font-family: var(--abc-thick);
         font-size: 14px;
+    }
+
+}
+
+.product-card:hover {
+   
+    h2 {
+        text-shadow: 0 0 2px rgba(256, 169, 209, 0.8), 0 0 4px rgba(256, 169, 209, 0.6), 0 0 6px rgba(256, 169, 209, 0.4), 0 0 8px rgba(256, 169, 209, 0.2);
     }
 
 }
