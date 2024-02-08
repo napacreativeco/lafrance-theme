@@ -19,6 +19,14 @@ footer.desktop {
         font-size: 14px;
     }
 
+    .social ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+    }
+
     .policies {
         ul {
             display: flex;
@@ -116,6 +124,18 @@ footer.desktop {
         a {
             text-transform: uppercase;
             font-size: 14px;
+        }
+
+        .social ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
+
+            svg {
+                width: 16px;
+            }
         }
     
         .upper {
