@@ -1,7 +1,7 @@
-<div class="default-page">
-    <h1>{{ page.title }}</h1>
+<div class="default-page {% if page.handle == 'privacy-policy' %} privacy-page{% endif %}">
+    <h1>{% if page.handle == 'privacy-policy' %} {{ shop.name }} {% endif %} {{ page.title }}</h1>
 
-    <div class="default-content {% if template.name == 'faq' %} faq-page {% endif %}">
+    <div class="default-content {% if page.handle == 'privacy-policy' %} privacy-page-content{% endif %}">
         {{ page.content }}
     </div>
 </div>
