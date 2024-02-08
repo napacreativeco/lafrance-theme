@@ -5,6 +5,7 @@ footer {
     display: block;
     transition: all 0.5s ease-in-out;
     background: var(--black);
+    overflow: hidden;
 
     .row {
         padding: 30px;
