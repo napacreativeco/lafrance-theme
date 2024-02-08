@@ -1,0 +1,89 @@
+<style>
+    .shipping-page {
+        padding: 40px 60px;
+
+        details > summary {
+            list-style: none;
+        }
+
+        details {
+
+            margin-bottom: 30px;
+
+            h2 {
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                display: inline;
+            }
+
+            p {
+                margin: 20px 10px;
+                font-weight: 100;
+                font-size: 1.2rem;
+            }
+        }
+
+        details[open] {
+            h2 {
+                border-bottom: 2px solid var(--white);
+            }
+        }
+
+    }
+
+</style>
+
+
+
+{% for block in section.blocks %}
+  
+    <details>
+      <summary>
+          <h2 class="accordion-title">{{ block.settings.faqtitle }}</h2>
+      </summary>
+      <p class="accordion-body">{{ block.settings.faqbody | newline_to_br }}</p>
+  </details>
+  
+  {% endfor %}
+  
+  {% schema %}
+      {
+        "name": "Shipping FAQ",
+        "tag": "section",
+        "class": "shipping-faq",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "page-title",
+            "label": "Page Title"
+          }
+        ],
+        "max_blocks": 20,
+        "blocks": [
+           {
+             "name": "FAQ",
+             "type": "faq",
+             "settings": [
+               {
+                 "type": "text",
+                 "id": "faqtitle",
+                 "label": "Question"
+               },
+               {
+                 "type": "richtext",
+                 "id": "faqbody",
+                 "label": "Answer"
+               }
+             ]
+           }
+        ],
+          "presets": [{
+              "name": "Shipping FAQ",
+              "category": "shipping",
+              "blocks": [{
+                  "type": "faq"
+              }]
+          }]
+      }
+  {% endschema %}
