@@ -1,4 +1,4 @@
-<footer>
+<footer class="desktop">
     <div class="row">
 
       <div class="cell policies">
@@ -17,22 +17,66 @@
         {% form 'customer' %}
           <div class="email">
             <label for="email" style="display: none;">Email</label>
-            <input type="email" placeholder="EMAIL ADDRESS" name="contact[email]" />
+            <input type="email" placeholder="JOIN OUR NEWSLETTER" name="contact[email]" />
           </div>
         
           <div class="submit">
-            <input type="submit" value="Sign up" />
+            <input type="submit" value="SUBMIT" />
           </div>
         {% endform %}
       </div>
 
       <div class="cell contact">
-        <div>
+        <div class="social">
           social icons
         </div>
-        <div>
-          &copy; {{ shop.name }} {{ "now" | date: "%Y" }}
+        <div class="attribution">
+          <span>&copy; {{ shop.name | upcase }} {{ "now" | date: "%Y" }}</span>
         </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <footer class="mobile">
+    <div class="upper">
+      <ul>
+        {% for link in linklists.footer.links %}
+          <li>
+            <a href="{{ link.url }}" title="{{ link.title }}">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="lower">
+      <div class="left">
+          <div class="social">
+            <ul>
+              <li>{{ settings.social__twitter }}</li>
+              <li>{{ settings.social__instagram }}</li>
+              <li>{{ settings.social__tiktok }}</li>
+            </ul>
+          </div>
+          <div class="attribution">
+            &copy; {{ shop.name | upcase }} {{ "now" | date: "%Y" }}
+          </div>
+      </div>
+
+      <div class="right">
+        {% form 'customer' %}
+          <div class="email">
+            <label for="email" style="display: none;">Email</label>
+            <input type="email" placeholder="JOIN OUR NEWSLETTER" name="contact[email]" />
+          </div>
+        
+          <div class="submit">
+            <input type="submit" value="SUBMIT" />
+          </div>
+        {% endform %}
       </div>
 
     </div>

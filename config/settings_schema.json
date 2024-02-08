@@ -15,11 +15,22 @@
     ]
   },
   {
-    "name": "Welcome",
+    "name": "Social Media",
     "settings": [
       {
-        "type": "paragraph",
-        "content": "Theme settings allow designers to provide an easy way for any user to customize the look and feel of their shop without having to delve into HTML or CSS code. Please see our [help page on theme settings](http:\/\/docs.shopify.com\/themes\/theme-templates\/settings) to learn more about how you can make your theme customizable."
+        "type": "text",
+        "id": "social__twitter",
+        "label": "X"
+      },
+      {
+        "type": "text",
+        "id": "social__instagram",
+        "label": "Instagram"
+      },
+      {
+        "type": "text",
+        "id": "social__tiktok",
+        "label": "TikTok"
       }
     ]
   }

@@ -1,7 +1,5 @@
-footer {
+footer.desktop {
     border-top: var(--border-white);
-    // overflow: hidden;
-    // height: 0px;
     display: block;
     transition: all 0.5s ease-in-out;
     background: var(--black);
@@ -41,20 +39,23 @@ footer {
     }
 
     .newsletter {
-        form {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: var(--border-white);
-        }
 
         .email {
             width: 100%;
         }
 
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: var(--border-white);
+
         input[type="email"] {
-            width: 400px;
+            //width: 400px;
+            width: 100%;
             max-width: 90%;
             background: transparent;
             color: var(--white);
@@ -93,22 +94,133 @@ footer {
         gap: 30px;
     }
 
+    .attribution {
+        text-transform: uppercase;
+    }
+
 }
 
 @media screen and (max-width: 767px) {
     
-    footer {
-        height: 100%;
-
-        .row {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 30px;
-        }
-
-        .newsletter {
-            
-        }
+    footer.desktop {
+        display: none;
     }
 
+    footer.mobile {
+        border-top: var(--border-white);
+        display: block;
+        transition: all 0.5s ease-in-out;
+        background: var(--black);
+        overflow: hidden;
+    
+        a {
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+    
+        .upper {
+            padding: 10px;
+
+            .policies {
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 20px;
+        
+                    li:nth-child(1) {
+                        position: relative;
+                    }
+        
+                    li:nth-child(1)::after {
+                        content: '|';
+                        padding-left: 20px;
+                    }
+        
+                }
+            }
+
+                
+            .contact {
+                font-size: 14px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 30px;
+            }
+
+        }
+
+
+        .lower {
+            display: grid;
+            grid-template-columns: 3fr 4fr;
+            padding: 10px;
+
+    
+            form {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: var(--border-white);
+                width: 100%;
+            }
+          
+
+            .right {
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;
+            }
+
+            .right form {
+                display: flex;
+                flex-direction: row;
+                border-bottom: var(--border-white);
+                gap: 10px;
+            }
+
+        }
+
+        .email {
+            width: 100%;
+        }
+
+        input[type="email"] {
+            //width: 400px;
+            width: 100%;
+            max-width: 100%;
+            background: transparent;
+            color: var(--white);
+            border: 0;
+            font-size: 12px;
+        }
+
+        input[type="email"]::placeholder {
+            color: var(--white);
+        }
+
+        input[type="submit"] {
+            text-transform: uppercase;
+            color: var(--white);
+            background: transparent;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        input[type="submit"]:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+    
+
+
+    
+    }
 }
