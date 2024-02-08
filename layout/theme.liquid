@@ -77,6 +77,9 @@
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
+  {% comment %} 
+  BACKGROUNDS
+  {% endcomment %}
   <div class="background-videos desktop">
     {{ settings.background_video | video_tag: autoplay: true, loop: true, muted: true }}
   </div>
@@ -95,16 +98,34 @@
     </style>
   {% endif %}
 
-  {% render 'component--cart-link' %}
+  {% comment %} 
+  DESKTOP NAVBAR
+  {% endcomment %}
+  {% render 'navbar--desktop' %}
+ 
 
+  {% comment %} 
+  MOBILE NAVBAR
+  {% endcomment %}
+  {% render 'navbar--mobile' %}
+
+  {% comment %} 
+  CART DRAWER
+  {% endcomment %}
   <div class="cart-drawer">
     {% section 'cart-drawer' %}
   </div>
 
   <div class="site-container">
 
+    {% comment %} 
+    SIDEBAR
+    {% endcomment %}
     {% render 'component--sidebar' %}
 
+    {% comment %} 
+    CONTENT
+    {% endcomment %}
     <main role="main">
         {{ content_for_layout }}
     </main>

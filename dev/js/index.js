@@ -25,24 +25,24 @@
 
 
 
-      $('main').on("scroll", function() {
+      // $('main').on("scroll", function() {
 
-        var scrollHeight = $(document).height();
-        var scrollPosition = $(window).height() + $(window).scrollTop();
+      //   var scrollHeight = $(document).height();
+      //   var scrollPosition = $(window).height() + $(window).scrollTop();
         
-        if ((scrollHeight - scrollPosition) / scrollHeight <= 0) {
+      //   if ((scrollHeight - scrollPosition) / scrollHeight <= 0) {
           
-          setTimeout(function() {
-            $('footer').css('height', 'auto');
-          }, 300);
+      //     setTimeout(function() {
+      //       $('footer').css('height', 'auto');
+      //     }, 300);
 
-          setTimeout(function() {
-            $('main').on('scroll', function() { $('footer').css('height', '0px') });
-          }, 1000);
+      //     setTimeout(function() {
+      //       $('main').on('scroll', function() { $('footer').css('height', '0px') });
+      //     }, 1000);
 
-        }
+      //   }
         
-      });
+      // });
       
 
 })(jQuery);

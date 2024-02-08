@@ -1,9 +1,10 @@
 footer {
     border-top: var(--border-white);
-    overflow: hidden;
-    height: 0px;
+    // overflow: hidden;
+    // height: 0px;
     display: block;
     transition: all 0.5s ease-in-out;
+    background: var(--black);
 
     .row {
         padding: 30px;
@@ -53,7 +54,7 @@ footer {
 
         input[type="email"] {
             width: 400px;
-            max-width: 100%;
+            max-width: 90%;
             background: transparent;
             color: var(--white);
             border: 0;
@@ -89,6 +90,24 @@ footer {
         align-items: center;
         justify-content: flex-end;
         gap: 30px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    
+    footer {
+        height: 100%;
+
+        .row {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .newsletter {
+            
+        }
     }
 
 }
