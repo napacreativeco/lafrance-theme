@@ -60,14 +60,14 @@
   {{ '//html5shiv.googlecode.com/svn/trunk/html5.js' | script_tag }}
   <![endif]-->
 
-  <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
+  <script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script>
   {% if template contains 'customers' %}  
-    <script src="{{ 'customer_area.js'  | shopify_asset_url }}" defer></script>
+    <script src="{{ 'customer_area.js'  | shopify_asset_url }}"></script>
   {% endif %}
   
   <!-- Additional Shopify helpers that will likely be added to the global shopify_common.js some day soon. -->
-  <script src="{{ 'shopify_common.js'  | asset_url }}" defer></script>
-  <script src="{{ 'option_selection.js' | shopify_asset_url }}" defer></script>
+  <script src="{{ 'shopify_common.js'  | asset_url }}"></script>
+  <script src="{{ 'option_selection.js' | shopify_asset_url }}"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
@@ -103,7 +103,6 @@
   DESKTOP NAVBAR
   {% endcomment %}
   {% render 'navbar--desktop' %}
- 
 
   {% comment %} 
   MOBILE NAVBAR
@@ -180,10 +179,6 @@
       direction: 'vertical',
       loop: true,
       freeMode: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
       slidesPerView: 1
     });
   </script>
