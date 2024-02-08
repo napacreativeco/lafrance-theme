@@ -1,0 +1,32 @@
+<div class="navbar-mobile-overlay">
+
+    <div class="wrap">
+
+        <div class="close-overlay">
+            &times;
+        </div>
+
+        <ul>
+            <li>
+                <h3>Categories</h3>
+            </li>
+            {% for l in linklists.main-menu.links %}
+    
+                <li>
+                    <a href="{{ l.url }}" title="{{ l.title }}">
+                        {{ l.title }}
+                    </a>
+                </li>
+                
+            {% endfor %}
+        </ul>
+    
+        <div class="lower">
+            <a href="/">
+                {% render 'icon--globe' %}
+            </a>
+        </div>
+
+    </div>
+
+</div>

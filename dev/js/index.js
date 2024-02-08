@@ -24,7 +24,14 @@
     });
 
 
+    $('.burger-holder').on('click', function() {
+      $('.navbar-mobile-overlay').css('display', 'block');
+    });
 
+    $('.close-overlay').on('click', function() {
+      $('.navbar-mobile-overlay').css('display', 'none');
+    });
+    
 
       // $('main').on("scroll", function() {
 
