@@ -69,7 +69,7 @@
   <script src="{{ 'shopify_common.js'  | asset_url }}" defer></script>
   <script src="{{ 'option_selection.js' | shopify_asset_url }}" defer></script>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" async></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
   <script>jQuery('html').removeClass('no-js').addClass('js');</script>
 
@@ -94,6 +94,7 @@
     {% render 'component--preloader' %}
   {% else %}
     <style>
+      .sidebar { opacity: 1 !important; }
       main { opacity: 1 !important; }
     </style>
   {% endif %}
@@ -135,45 +136,7 @@
   {% comment %} 
   Footer
   {% endcomment %}
-  <footer>
-    <div class="row">
-
-      <div class="cell policies">
-        <ul>
-          {% for link in linklists.footer.links %}
-            <li>
-              <a href="{{ link.url }}" title="{{ link.title }}">
-                {{ link.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class="cell newsletter">
-        {% form 'customer' %}
-          <div class="email">
-            <label for="email" style="display: none;">Email</label>
-            <input type="email" placeholder="EMAIL ADDRESS" name="contact[email]" />
-          </div>
-        
-          <div class="submit">
-            <input type="submit" value="Sign up" />
-          </div>
-        {% endform %}
-      </div>
-
-      <div class="cell contact">
-        <div>
-          social icons
-        </div>
-        <div>
-          &copy; {{ shop.name }} {{ "now" | date: "%Y" }}
-        </div>
-      </div>
-
-    </div>
-  </footer>
+  {% render 'component--footer' %}
 
   <script type="application/json" data-ajax-cart-initial-state>
     {{ cart | json }}
@@ -208,9 +171,11 @@
     });
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
   <script>
-    const sswiper = new Swiper('.product-gallery-swiper', {
+    const swiper = new Swiper('.product-gallery-swiper', {
       direction: 'vertical',
       loop: true,
       pagination: {
@@ -220,6 +185,22 @@
       slidesPerView: 1
     });
   </script>
+
+
+
+  <script>
+    const mobileswiper = new Swiper('.product-gallery-swiper--mobile', {
+      direction: 'horizontal',
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      slidesPerView: 1
+    });
+  </script>
+
+
 
   <script src="{{ 'shop.js'  | asset_url }}" defer></script>
   <script src="{{ 'index.js' | asset_url }}" defer></script>

@@ -27,11 +27,24 @@ body {
     font-size: 100%;
 }
 
+.desktop {
+    display: block;
+}
+.mobile {
+    display: none;
+}
 @media screen and (max-width: 767px) {
     body {
         overflow-x: hidden;
         overflow-y: scroll;
         height: auto;
+    }
+
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
     }
 }
 

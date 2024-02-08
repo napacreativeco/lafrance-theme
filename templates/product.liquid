@@ -17,11 +17,28 @@
 
       {% comment %} IMAGE {% endcomment %}
       <div class="product-image">
-        {% for image in product.images %}
-          <div class="image">
-            <img src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
+
+        <div class="swiper product-gallery-swiper">
+          <div class="swiper-wrapper">
+            {% for image in product.images %}
+              <div class="swiper-slide image">
+                <img src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
+              </div>
+            {% endfor %}
           </div>
-        {% endfor %}
+        </div>
+
+        <div class="swiper product-gallery-swiper--mobile">
+          <div class="swiper-wrapper">
+            {% for image in product.images %}
+              <div class="swiper-slide image">
+                <img src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+
       </div>
 
 
@@ -29,6 +46,9 @@
       <div class="product-data">
         
         <div class="title">
+          <p class="product-vendor">
+            {{ product.vendor }}
+          </p>
           <h1 class="product-title" itemprop="title">
             {{ product.title }}
           </h1>
@@ -75,17 +95,21 @@
                 {% assign found_available_variant = false %}
                 {% for variant in product.variants %}
                   <li class="switch-field">
+
                       {% if variant.available %}
+
                           <input type="radio"{% if variant.compare_at_price > variant.price %} data-compare-at-price="{{ variant.compare_at_price | money_with_currency }}"{% endif %} data-price="{{ variant.price | money_with_currency }}" id="{{ variant.id }}" value="{{ variant.id }}" name="id"{% if found_available_variant == false  %}{% assign found_available_variant = true %} checked="checked"{% endif %} />
-                          
                           <label for="{{ variant.id }}">
                             {{ variant.title }}
                           </label>
+
                       {% else %}
+
                           <input type="radio" class="out-of-stock" id="{{ variant.id }}" value="{{ variant.id }}" name="id" />
                           <label for="{{ variant.id }}" class="out-of-stock">
                             {{ variant.title }}
                           </label>
+
                       {% endif %}
                     </li>
                 {% endfor %}
@@ -139,11 +163,6 @@
 
 </div>
 
-<script>
-
-
-
-</script>
 
 {% comment %}
   Adding support for product options. See here for details:  

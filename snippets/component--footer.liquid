@@ -1,0 +1,39 @@
+<footer>
+    <div class="row">
+
+      <div class="cell policies">
+        <ul>
+          {% for link in linklists.footer.links %}
+            <li>
+              <a href="{{ link.url }}" title="{{ link.title }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="cell newsletter">
+        {% form 'customer' %}
+          <div class="email">
+            <label for="email" style="display: none;">Email</label>
+            <input type="email" placeholder="EMAIL ADDRESS" name="contact[email]" />
+          </div>
+        
+          <div class="submit">
+            <input type="submit" value="Sign up" />
+          </div>
+        {% endform %}
+      </div>
+
+      <div class="cell contact">
+        <div>
+          social icons
+        </div>
+        <div>
+          &copy; {{ shop.name }} {{ "now" | date: "%Y" }}
+        </div>
+      </div>
+
+    </div>
+  </footer>
