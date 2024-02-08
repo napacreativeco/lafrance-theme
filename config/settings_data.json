@@ -2,6 +2,9 @@
   "current": {
     "background_video": "shopify:\/\/files\/videos\/lafrancebg.mp4",
     "background_video_mobile": "shopify:\/\/files\/videos\/lafrancebg-vert.mp4",
+    "social__twitter": "#",
+    "social__instagram": "#",
+    "social__tiktok": "#",
     "customer_layout": "theme",
     "example_option": "option",
     "sections": {
