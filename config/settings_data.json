@@ -2,6 +2,9 @@
   "current": {
     "background_video": "shopify:\/\/files\/videos\/lafrancebg.mp4",
     "background_video_mobile": "shopify:\/\/files\/videos\/lafrancebg-vert.mp4",
+    "social__twitter": "https:\/\/twitter.com\/Lafrance1of1",
+    "social__instagram": "https:\/\/www.instagram.com\/lafrance\/?hl=en",
+    "social__tiktok": "https:\/\/www.tiktok.com\/@1of1lafrance",
     "frontpage_collection": "rare-valentine",
     "sections": {
       "cart-drawer": {
