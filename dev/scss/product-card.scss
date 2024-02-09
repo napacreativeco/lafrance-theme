@@ -34,7 +34,7 @@
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 24px;
         font-family: var(--bullet);
         margin: 0 0 4px 0;
         line-height: 0.8;
@@ -55,4 +55,12 @@
         text-shadow: 0 0 2px rgba(256, 169, 209, 0.8), 0 0 4px rgba(256, 169, 209, 0.6), 0 0 6px rgba(256, 169, 209, 0.4), 0 0 8px rgba(256, 169, 209, 0.2);
     }
 
+}
+
+@media screen and (max-width: 767px) {
+    .product-card {
+        h2 {
+            font-size: 20px;
+        }
+    }
 }

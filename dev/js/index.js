@@ -12,9 +12,12 @@
       });
 
       setTimeout(function() {
+        
         $('.preloader').fadeOut();
         $('main').css('opacity', '1');
         $('.sidebar').css('opacity', '1');
+        $('.mobile-nav').css('opacity', '1');
+
       }, 3000);
 
     });
