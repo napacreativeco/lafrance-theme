@@ -1,7 +1,13 @@
 <li class="product-card">
     
     <div class="image {% if !product.available %}sold-out{% endif %}">
-        <a href="{{ product.url }}" title="{{ product.title }}">
+        {% for image in product.images %}
+            
+        {% endfor %}
+        <a class="image-one" href="{{ product.url }}" title="{{ product.title }}">
+            <img src="{{ product.featured_image | img_url: '900x' }}" alt="{{ product.title }}" />
+        </a>
+        <a class="image-two" href="{{ product.url }}" title="{{ product.title }}">
             <img src="{{ product.featured_image | img_url: '900x' }}" alt="{{ product.title }}" />
         </a>
     </div>
