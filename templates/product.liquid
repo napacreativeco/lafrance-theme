@@ -18,7 +18,7 @@
       {% comment %} IMAGE {% endcomment %}
       <div class="product-image">
 
-        <div class="swiper product-gallery-swiper">
+        <div class="product-gallery-swiper">
           <div class="swiper-wrapper">
             {% for image in product.images %}
               <div class="swiper-slide image">
@@ -35,8 +35,6 @@
                 <img src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
               </div>
             {% endfor %}
-
-           
           </div>
           <div class="swiper-pagination"></div>
         </div>
