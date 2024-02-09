@@ -168,7 +168,7 @@
       var subtotal = Shopify.formatMoney(state.cart.items_subtotal_price);
       $('.total-value').text(total.substring(0, subtotal.length - 3));
       $('.subtotal-value').text(subtotal.substring(0, subtotal.length - 3));
-      $('.cart-number').text('{{ cart.item_count }}');
+      //$('.cart-number').text('{{ cart.item_count }}');
     });
   </script>
 
