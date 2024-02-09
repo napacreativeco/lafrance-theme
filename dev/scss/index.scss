@@ -153,6 +153,17 @@ a {
     filter: saturate(0);
 }
 
+#challenge {
+    .site-container {
+        height: 100vh;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+    }
+}
+
 /*
 * Background Videos
 */
