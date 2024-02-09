@@ -1,1 +1,1 @@
-.product-grid{padding:80px 0;display:grid;grid-template-columns:repeat(5,1fr);grid-gap:80px 20px}@media screen and (max-width:767px){.product-grid{display:grid;grid-template-columns:repeat(2,1fr);padding:100px 30px 40px 30px}}
+.product-grid{padding:80px 0;display:grid;grid-template-columns:repeat(5,1fr);grid-gap:80px 20px}@media screen and (max-width:767px){.product-grid{display:grid;grid-template-columns:repeat(2,1fr);padding:100px 0 40px 30px}}
