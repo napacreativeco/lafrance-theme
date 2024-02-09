@@ -149,6 +149,10 @@ a {
     transform: translateX(0px);
 }
 
+details {
+    list-style: none !important;
+}
+
 .desaturate {
     filter: saturate(0);
 }
