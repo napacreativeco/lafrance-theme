@@ -164,6 +164,17 @@ a {
     }
 }
 
+.template-404 {
+    .site-container {
+        height: 100vh;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+    }
+}
+
 /*
 * Background Videos
 */
