@@ -1,7 +1,19 @@
 {{ 'component--collection.css'| asset_url | stylesheet_tag }}
 
 <ul class="product-grid">
-    {% for product in collections.all.products %}
-      {% render 'card--product', product: product %}
-    {% endfor %}
-  </ul>
+
+    {% if settings.frontpage_collection != empty %}
+
+      {% for product in settings.frontpage_collection.products %}
+        {% render 'card--product', product: product %}
+      {% endfor %}
+
+    {% else %}
+
+      {% for product in collections.all.products %}
+        {% render 'card--product', product: product %}
+      {% endfor %}
+
+    {% endif %}
+
+</ul>
