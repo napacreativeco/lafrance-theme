@@ -27,9 +27,7 @@
       </div>
 
       <div class="cell contact">
-        <div class="social">
-          social icons
-        </div>
+        {% render 'component--social-icons' %}
         <div class="attribution">
           <span>&copy; {{ shop.name | upcase }} {{ "now" | date: "%Y" }}</span>
         </div>
@@ -54,25 +52,7 @@
 
     <div class="lower">
       <div class="left">
-          <div class="social">
-            <ul>
-              <li>
-                <a href="{{ settings.social__twitter }}">
-                  {% render 'icon--x' %}
-                </a>
-              </li>
-              <li>
-                <a href="{{ settings.social__instagram }}">
-                  {% render 'icon--instagram' %}
-                </a>
-              </li>
-              <li>
-                <a href="{{ settings.social__tiktok }}">
-                  {% render 'icon--tiktok' %}
-                </a>
-              </li>
-            </ul>
-          </div>
+          {% render 'component--social-icons' %}
           <div class="attribution">
             &copy; {{ shop.name | upcase }} {{ "now" | date: "%Y" }}
           </div>
