@@ -1,15 +1,18 @@
 {{ 'component--faq.css' | asset_url | stylesheet_tag }}
 
-{% for block in section.blocks %}
+<div style="min-height: 100vh">
+  {% for block in section.blocks %}
   
     <details>
       <summary>
           <h2 class="accordion-title">{{ block.settings.faqtitle }}</h2>
       </summary>
       <p class="accordion-body">{{ block.settings.faqbody | newline_to_br }}</p>
-  </details>
+    </details>
   
   {% endfor %}
+</div>
+
   
   {% schema %}
       {
