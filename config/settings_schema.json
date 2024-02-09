@@ -33,5 +33,15 @@
         "label": "TikTok"
       }
     ]
+  },
+  {
+    "name": "Frontpage Collection",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "frontpage_collection",
+        "label": "Choose Frontpage Collection"
+      }
+    ]
   }
 ]
