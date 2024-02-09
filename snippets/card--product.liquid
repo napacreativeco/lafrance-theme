@@ -1,6 +1,6 @@
 <li class="product-card">
     
-    <div class="image {% if !product.available %}sold-out{% endif %}">
+    <div class="image {% if product.available != true %}sold-out{% endif %}">
 
         {% if product.images.size > 1 %}
             <a class="image-one" href="{{ product.url }}" title="{{ product.title }}">
