@@ -2,45 +2,15 @@
   "current": {
     "background_video": "shopify:\/\/files\/videos\/lafrancebg.mp4",
     "background_video_mobile": "shopify:\/\/files\/videos\/lafrancebg-vert.mp4",
-    "social__twitter": "#",
-    "social__instagram": "#",
-    "social__tiktok": "#",
-    "frontpage_collection": "lafrance-x-puma",
-    "customer_layout": "theme",
-    "example_option": "option",
     "sections": {
       "cart-drawer": {
         "type": "cart-drawer",
         "settings": {
-        }
-      },
-      "faq": {
-        "type": "faq",
-        "blocks": {
-          "faq_Ec48EF": {
-            "type": "faq",
-            "settings": {
-              "faqtitle": "this a test",
-              "faqbody": "<p>this a test too<\/p>"
-            }
-          }
-        },
-        "block_order": [
-          "faq_Ec48EF"
-        ],
-        "settings": {
-          "page-title": ""
         }
       }
     },
     "content_for_index": [
 
     ]
-  },
-  "presets": {
-    "Naked": {
-      "customer_layout": "theme",
-      "example_option": "option"
-    }
   }
 }
