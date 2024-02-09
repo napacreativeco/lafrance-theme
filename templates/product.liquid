@@ -20,7 +20,7 @@
           <div class="swiper-wrapper">
             {% for image in product.images %}
               <div class="swiper-slide image">
-                <img class="image-object" src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
+                <img class="{% if product.has_only_default_variant %} {% if product.available != true %} desaturate {% endif %} {% endif %} image-object" src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
               </div>
             {% endfor %}
           </div>
@@ -30,7 +30,7 @@
           <div class="swiper-wrapper">
             {% for image in product.images %}
               <div class="swiper-slide image">
-              <img class="{% if product.has_only_default_variant %} {% if product.inventory_quantity < 1 %}desaturate {% endif %}{% endif %} image-object" src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
+              <img class="{% if product.has_only_default_variant %} {% if product.available != true %} desaturate {% endif %} {% endif %} image-object" src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
               </div>
             {% endfor %}
           </div>
