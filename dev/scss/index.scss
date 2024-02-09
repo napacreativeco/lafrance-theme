@@ -157,6 +157,10 @@ summary::-webkit-details-marker {
     display: none !important;
 }
 
+details::-webkit-details-marker {
+    display: none !important;
+}
+
 .desaturate {
     filter: saturate(0);
 }
