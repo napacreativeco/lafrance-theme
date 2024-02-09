@@ -1,16 +1,25 @@
 <li class="product-card">
     
     <div class="image {% if !product.available %}sold-out{% endif %}">
-        {% for image in product.images %}
-            {% assign one = image[0] %}
-            {% assign two = image[1] %}
-        {% endfor %}
-        <a class="image-one" href="{{ product.url }}" title="{{ product.title }}">
-            <img src="{{ product.images[0] | img_url: '900x' }}" alt="{{ product.title }}" />
-        </a>
-        <a class="image-two" href="{{ product.url }}" title="{{ product.title }}">
-            <img src="{{ product.images[1] | img_url: '900x' }}" alt="{{ product.title }}" />
-        </a>
+
+        {% if product.images.size > 1 %}
+
+            <a class="image-one" href="{{ product.url }}" title="{{ product.title }}">
+                <img src="{{ product.images[0] | image_url: width: '900' }}" alt="{{ product.title }}" />
+            </a>
+      
+            <a class="image-two" href="{{ product.url }}" title="{{ product.title }}">
+                <img src="{{ product.images[1] | image_url: width: '900' }}" alt="{{ product.title }}" />
+            </a>
+
+        {% else %}
+
+            <a class="featured-image" href="{{ product.url }}" title="{{ product.title }}">
+                <img src="{{ product.featured_image | image_url: width: '900' }}" alt="{{ product.title }}" />
+            </a>
+            
+        {% endif %}
+
     </div>
 
     <div class="title">
