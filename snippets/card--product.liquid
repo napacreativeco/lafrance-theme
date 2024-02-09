@@ -3,7 +3,6 @@
     <div class="image {% if !product.available %}sold-out{% endif %}">
 
         {% if product.images.size > 1 %}
-
             <a class="image-one" href="{{ product.url }}" title="{{ product.title }}">
                 <img src="{{ product.images[0] | image_url: width: '900' }}" alt="{{ product.title }}" />
             </a>
@@ -11,13 +10,10 @@
             <a class="image-two" href="{{ product.url }}" title="{{ product.title }}">
                 <img src="{{ product.images[1] | image_url: width: '900' }}" alt="{{ product.title }}" />
             </a>
-
         {% else %}
-
             <a class="featured-image" href="{{ product.url }}" title="{{ product.title }}">
                 <img src="{{ product.featured_image | image_url: width: '900' }}" alt="{{ product.title }}" />
             </a>
-
         {% endif %}
 
     </div>
