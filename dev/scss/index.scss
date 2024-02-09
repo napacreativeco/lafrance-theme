@@ -153,6 +153,11 @@ details {
     list-style: none !important;
 }
 
+details > summary { 
+
+    display: block; 
+
+}
 .desaturate {
     filter: saturate(0);
 }
