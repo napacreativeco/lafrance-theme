@@ -211,6 +211,10 @@ div[data-ajax-cart-messages] {
     text-transform: uppercase;
 }
 
+.swiper-pagination {
+    display: none;
+}
+
 .swiper-pagination-bullet {
     background: transparent;
     border: 1px solid var(--white) !important;
@@ -290,6 +294,10 @@ div[data-ajax-cart-messages] {
         display: none;
     }
     .product-gallery-swiper--mobile {
+        display: block;
+    }
+
+    .swiper-pagination {
         display: block;
     }
 
