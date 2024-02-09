@@ -4,11 +4,11 @@
 
         {% if product.images.size > 1 %}
 
-            <a class="image-one desktop" href="{{ product.url }}" title="{{ product.title }}">
+            <a class="image-one" href="{{ product.url }}" title="{{ product.title }}">
                 <img src="{{ product.images[0] | image_url: width: '900' }}" alt="{{ product.title }}" />
             </a>
       
-            <a class="image-two desktop" href="{{ product.url }}" title="{{ product.title }}">
+            <a class="image-two" href="{{ product.url }}" title="{{ product.title }}">
                 <img src="{{ product.images[1] | image_url: width: '900' }}" alt="{{ product.title }}" />
             </a>
 
@@ -20,11 +20,6 @@
 
         {% endif %}
 
-
-        <a class="featured-image mobile" href="{{ product.url }}" title="{{ product.title }}">
-            <img src="{{ product.featured_image | image_url: width: '900' }}" alt="{{ product.title }}" />
-        </a>
-        
     </div>
 
     <div class="title">
