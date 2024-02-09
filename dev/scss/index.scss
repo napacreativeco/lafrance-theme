@@ -152,12 +152,9 @@ a {
 details {
     list-style: none !important;
 }
-
-details > summary { 
-
-    display: block; 
-
-}
+details summary::-webkit-details-marker {
+    display:none;
+  }
 .desaturate {
     filter: saturate(0);
 }
