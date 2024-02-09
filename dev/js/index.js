@@ -33,6 +33,23 @@
     });
     
 
+    $('#product-plus').on('click', function() {
+      var val = $('#product-input').val();
+      console.log(val);
+
+      $('#product-input').attr('value', parseInt(val) + 1);
+    });
+    $('#product-minus').on('click', function() {
+      var val = $('#product-input').val();
+      console.log(val);
+
+      if (val < 1) {
+        $('#product-input').attr('value', 0);
+      } else {
+        $('#product-input').attr('value', parseInt(val) - 1);
+      }
+    });
+
       // $('main').on("scroll", function() {
 
       //   var scrollHeight = $(document).height();

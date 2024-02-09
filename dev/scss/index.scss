@@ -149,6 +149,10 @@ a {
     transform: translateX(0px);
 }
 
+.desaturate {
+    filter: saturate(0);
+}
+
 /*
 * Background Videos
 */

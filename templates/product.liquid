@@ -10,8 +10,6 @@
   <meta itemprop="image" content="{{ product | image_url: 700 }}" />
   
   <form action="/cart/add" method="post" enctype="multipart/form-data">
-    
-    <div data-ajax-cart-messages="form"></div>
 
     <div class="product--wrapper">
 
@@ -22,7 +20,7 @@
           <div class="swiper-wrapper">
             {% for image in product.images %}
               <div class="swiper-slide image">
-                <img src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
+                <img class="image-object" src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
               </div>
             {% endfor %}
           </div>
@@ -32,7 +30,7 @@
           <div class="swiper-wrapper">
             {% for image in product.images %}
               <div class="swiper-slide image">
-                <img src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
+                <img class="image-object" src="{{ image | image_url: width: 800 }}" alt="{{ image.alt | escape }}" width="100%" height="auto" />
               </div>
             {% endfor %}
           </div>
@@ -55,9 +53,43 @@
           </h1>
         </div>
 
-        <p class="product-description" itemprop="description">
-          {{ product.description }}
-        </p>
+        {% comment %} PRICE {% endcomment %}
+        <div class="price">
+          <div id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+            <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+            {% if product.available %}
+              <link itemprop="availability" href="http://schema.org/InStock" />
+            {% else %}
+              <link itemprop="availability" href="http://schema.org/OutOfStock" />
+            {% endif %}
+
+            <p class="price-field">
+              {% assign variant = product.selected_or_first_available_variant %}
+              {% if product.compare_at_price > product.price %}
+                <span class="product-price on-sale" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
+                <s class="product-compare-price">{{ variant.compare_at_price | money_without_trailing_zeros }}</s>
+              {% else %}
+                <span class="product-price" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
+              {% endif %}
+            </p>
+
+          </div>
+        </div>
+
+        <div class="description-holder">
+          <p class="product-description" itemprop="description">
+            {{ product.description }}
+          </p>
+        </div>
+
+        <div class="quantity-input">
+          <div id="product-minus" class="minus"><span>-</span></div>
+          <div class="quant">
+            <input id="product-input" type="text" name="quantity" value="1" size="4" />
+          </div> 
+          <div id="product-plus" class="plus"><span>+</span></div>
+        </div>
 
         {% comment %} ACTIONS {% endcomment %}
         <div class="actions">
@@ -74,6 +106,7 @@
               <script type="text/javascript" charset="utf-8">
                 jQuery(function() { 
                   var first_variant_price = jQuery("ul li input[type='radio']:checked").attr("data-price");
+                  
                   var first_variant_compare_at_price = jQuery("ul li input[type='radio']:checked").attr("data-compare-at-price") || ''; 
 
                   jQuery(".price-field span").html(first_variant_price);
@@ -88,6 +121,21 @@
                     var variant_compare_at_price = jQuery(this).attr("data-compare-at-price") || '';
                     jQuery(".price-field del").html(variant_compare_at_price);
 
+                    var instock = jQuery(this).attr("data-stock");
+
+                    if ( instock ) {
+                      console.log("in stock");
+
+                      jQuery('.image-object').removeClass('desaturate');
+                      jQuery('#add').attr('value', 'ADD TO CART');
+
+                    } else {
+                      console.log("out of stock");
+                      jQuery('.image-object').addClass('desaturate');
+                      jQuery('#add').attr('value', 'OUT OF STOCK');
+                    }
+                    
+
                   });
                 });
               </script>
@@ -99,7 +147,7 @@
 
                       {% if variant.available %}
 
-                          <input type="radio"{% if variant.compare_at_price > variant.price %} data-compare-at-price="{{ variant.compare_at_price | money_with_currency }}"{% endif %} data-price="{{ variant.price | money_with_currency }}" id="{{ variant.id }}" value="{{ variant.id }}" name="id"{% if found_available_variant == false  %}{% assign found_available_variant = true %} checked="checked"{% endif %} />
+                          <input type="radio" data-stock="{{ variant.available }}" {% if variant.compare_at_price > variant.price %} data-compare-at-price="{{ variant.compare_at_price | money_with_currency }}"{% endif %} data-price="{{ variant.price | money_without_trailing_zeros }}" id="{{ variant.id }}" value="{{ variant.id }}" name="id"{% if found_available_variant == false  %}{% assign found_available_variant = true %} checked="checked"{% endif %} />
                           <label for="{{ variant.id }}">
                             {{ variant.title }}
                           </label>
@@ -124,37 +172,14 @@
 
           </div>
 
-          {% comment %} PRICE {% endcomment %}
-          <div class="price">
-            <div id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-
-              <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
-              {% if product.available %}
-                <link itemprop="availability" href="http://schema.org/InStock" />
-              {% else %}
-                <link itemprop="availability" href="http://schema.org/OutOfStock" />
-              {% endif %}
-
-              <p>
-                {% assign variant = product.selected_or_first_available_variant %}
-                {% if product.compare_at_price > product.price %}
-                  <span class="product-price on-sale" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
-                  <s class="product-compare-price">{{ variant.compare_at_price | money_without_trailing_zeros }}</s>
-                {% else %}
-                  <span class="product-price" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
-                {% endif %}
-              </p>
-
-            </div>
-          </div>
-
         </div>
-
 
         {% comment %} Add to cart {% endcomment %}
         <div id="product-add">
           <input type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
         </div>
+
+        <div data-ajax-cart-messages="form"></div>
 
       </div>
 
