@@ -2,6 +2,7 @@
   "current": {
     "background_video": "shopify:\/\/files\/videos\/lafrancebg.mp4",
     "background_video_mobile": "shopify:\/\/files\/videos\/lafrancebg-vert.mp4",
+    "frontpage_collection": "rare-valentine",
     "sections": {
       "cart-drawer": {
         "type": "cart-drawer",
