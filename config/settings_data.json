@@ -11,6 +11,88 @@
         "type": "cart-drawer",
         "settings": {
         }
+      },
+      "faq": {
+        "type": "faq",
+        "blocks": {
+          "faq_LQDAAL": {
+            "type": "faq",
+            "settings": {
+              "faqtitle": "PRE-ORDERS",
+              "faqbody": "<p>We do our best to deliver your order on time. However if we experience delays, the product release date may change. Our pre-order items normally have a scheduled release date when they are announced. Due to unexpected changes in product production, warehouse operations, or other issues outside of our control (such as the COVID-19 pandemic), the scheduled release dates are only estimated time-frames and not exact dates. Please be aware that release dates are subject to change.<\/p>"
+            }
+          },
+          "faq_mctEpr": {
+            "type": "faq",
+            "settings": {
+              "faqtitle": "RETURNS AND EXCHANGES",
+              "faqbody": "<p>ALL SALES ARE FINAL.  There are no refunds, returns, or exchanges.<\/p>"
+            }
+          },
+          "faq_kFcUze": {
+            "type": "faq",
+            "settings": {
+              "faqtitle": "WHEN WILL MY ORDER SHIP?",
+              "faqbody": "<p>Most orders are fulfilled within 2 to 10 business days of the order being placed. This does not apply to pre-orders.<\/p><p>Multiple unit orders will not ship until all items are in stock.<\/p><p>You will receive an automatic shipping confirmation at the time your order is shipped. It will includes your tracking number.<\/p><p>PLEASE NOTE: Tracking numbers can take up to 48 hours to update.  Not all shipping methods provide step by step tracking.<\/p><p>Unfortunately, we are not able to upgrade a shipping method once an order has been placed.<\/p>"
+            }
+          },
+          "faq_fqrHBa": {
+            "type": "faq",
+            "settings": {
+              "faqtitle": "WHEN WILL I GET MY ORDER CONFIRMATION",
+              "faqbody": "<p>Order confirmations are automatically sent to the email address provided at the time your order is completed.<br\/><br\/>Your confirmation email will include:<\/p><ul><li>Details of the items ordered<\/li><li>Shipping and billing address<\/li><li>Shipping method selected<\/li><li>Digital download links (if applicable)<\/li><\/ul><p>If you have not received your order confirmation within a few minutes of a successful order, please check your junk or spam folder.If the confirmation email is still not found in your inbox or you have entered your email address incorrectly, reach out to our customer service team. We will gladly look into it for you and work towards a resolution.<\/p>"
+            }
+          },
+          "faq_enp4QN": {
+            "type": "faq",
+            "settings": {
+              "faqtitle": "MY ORDER WASN'T SHIPPED - WHY WAS I CHARGED?",
+              "faqbody": "<p>All orders are charged in full at the time you place your order. For security and compliance reasons we do not keep payment information or credit card data on file.<\/p>"
+            }
+          },
+          "faq_kpqAxT": {
+            "type": "faq",
+            "settings": {
+              "faqtitle": "INTERNATIONAL SHIPPING",
+              "faqbody": "<p>PLEASE NOTE: Substantial transit time is expected for international orders due to processing through customs. If you do not receive your package in 6 weeks, please be sure and check with your local sorting\/postal office to ensure they’re not holding the package or that it’s not being held in customs.Nearly every shipment that crosses an international border is subject to the assessment of duties and taxes determined by each country.It is important to note that all taxes and duties are the responsibility of the purchaser. We do not have the ability to mark packages as having \"No Commercial Value\" in order to reduce potential duties due.If you have questions about your order location after it has arrived in your country, contact your local postal service for updates.<\/p>"
+            }
+          },
+          "faq_hPVwnD": {
+            "type": "faq",
+            "settings": {
+              "faqtitle": "HOW CAN I CONTACT CUSTOMER SERVICE?",
+              "faqbody": "<p>info@1lafrance.com<\/p>"
+            }
+          },
+          "faq_tfPjMp": {
+            "type": "faq",
+            "settings": {
+              "faqtitle": "WHAT ARE YOUR TERMS OF SERVICE?",
+              "faqbody": "<p>By accessing or using any part of the site, you agree to be bound by these terms of service. Any new features, which are added to the current store shall also be subject to the terms of service. It is your responsibility to check this page periodically for changes. Your continued use of or access to the website following the posting of any changes constitutes acceptance of those changes.<\/p><p><br\/><\/p><p>In the event that the carrier is unable to deliver a package due to an incorrect address entered by the customer, the customer’s refusal to pay duties, multiple failed attempts to reach the customer at point of delivery or otherwise, LaFrance will not be responsible for payment of return shipping costs levied by the courier. Similarly, we will not be held responsible for the payment of re-shipping merchandise to the customer. In cases such as these, the customer remains responsible for all shipping costs associated with returned packages due to failed delivery.<\/p>"
+            }
+          },
+          "faq_xqknyf": {
+            "type": "faq",
+            "settings": {
+              "faqtitle": "PRIVACY POLICY",
+              "faqbody": "<p>LaFrance treats our customers’ account information as private and confidential. We will never share account information with any outside affiliate or individual. Your information is secured and encrypted with the secure socket layer software.<\/p><p>When visiting this site, third parties (such as AdRoll) may place cookies on users’ browsers for targeted advertising purposes. Data collected for targeting advertising may include IP addresses, cookie identifiers, website activity.<\/p><p>This data may be used by third parties (such as AdRoll) to target advertising on other sites based on your users’ online activity. You may opt of receiving targeted advertising on the DAA opt-out site at www.aboutads.info or the NAI opt-out site at networkadvertising.org\/choices.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "faq_LQDAAL",
+          "faq_mctEpr",
+          "faq_kFcUze",
+          "faq_fqrHBa",
+          "faq_enp4QN",
+          "faq_kpqAxT",
+          "faq_hPVwnD",
+          "faq_tfPjMp",
+          "faq_xqknyf"
+        ],
+        "settings": {
+          "page-title": ""
+        }
       }
     },
     "content_for_index": [
