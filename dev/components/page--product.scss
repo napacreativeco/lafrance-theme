@@ -309,6 +309,12 @@ div[data-ajax-cart-messages] {
             flex-wrap: nowrap;
         }
 
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .product-image {
             overflow-y: hidden;
             overflow-x: scroll;
