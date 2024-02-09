@@ -96,7 +96,6 @@
               <script type="text/javascript" charset="utf-8">
                 jQuery(function() { 
                   var first_variant_price = jQuery("ul li input[type='radio']:checked").attr("data-price");
-                  
                   var first_variant_compare_at_price = jQuery("ul li input[type='radio']:checked").attr("data-compare-at-price") || ''; 
 
                   jQuery(".price-field span").html(first_variant_price);
@@ -121,8 +120,10 @@
 
                     } else {
                       console.log("out of stock");
+
                       jQuery('.image-object').addClass('desaturate');
                       jQuery('#add').attr('value', 'OUT OF STOCK');
+                      
                     }
                     
 

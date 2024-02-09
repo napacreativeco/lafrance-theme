@@ -119,6 +119,7 @@
         grid-template-columns: 1fr 1fr 1fr;
         max-width: 130px;
         margin: 0 0 20px 0;
+        flex: 0 0 auto;
         
         .plus, .minus, input {
             text-align: center;
@@ -213,6 +214,7 @@ div[data-ajax-cart-messages] {
 
 .swiper-pagination {
     display: none;
+    z-index: 3 !important;
 }
 
 .swiper-pagination-bullet {
@@ -314,11 +316,19 @@ div[data-ajax-cart-messages] {
             font-weight: 100;
             text-transform: uppercase;
             display: block;
-            line-height: 1.3;
+            line-height: 1;
+            font-size: 48px;
         }
 
         ul {
             flex-wrap: nowrap;
+        }
+
+        // Price
+        .price {
+            font-family: var(--abc);
+            font-size: 48px;
+            margin: 0;
         }
 
         .swiper-slide {
