@@ -166,7 +166,11 @@ details::-webkit-details-marker {
 }
 
 .sold-out {
-    filter: saturate(0);
+
+    img {
+        filter: saturate(0);
+    }
+    
 }
 
 #challenge {
