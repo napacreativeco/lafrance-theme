@@ -4,6 +4,7 @@
   Learn how to read theme settings in your theme.
 {% endcomment %}
 
+{{ 'component--collection.css'| asset_url | stylesheet_tag }}
 
 {% if settings.frontpage_collection != empty %}
 
@@ -16,7 +17,7 @@
 
 {% else %}
 
-  <ul>
+  <ul class="product-grid">
     {% for product in collections.all.products %}
       {% render 'card--product', product: product %}
     {% endfor %}
