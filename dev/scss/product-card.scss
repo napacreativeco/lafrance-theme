@@ -5,12 +5,26 @@
         display: block;
         margin: 0 0 20px 0;
         filter: drop-shadow(rgba(256, 169, 209, 1) 0px 0px 10px);
+        position: relative;
+
+        .image-two {
+            display: none;
+        }
 
         a {
             display: block;
         }
 
         img {
+            display: block;
+        }
+    }
+
+    .image:hover {
+        .image-one {
+            display: none;
+        }
+        .image-two {
             display: block;
         }
     }
