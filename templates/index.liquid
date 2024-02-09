@@ -4,4 +4,23 @@
   Learn how to read theme settings in your theme.
 {% endcomment %}
 
-{% render 'component--collection' %}
+
+{% if settings.frontpage_collection != empty %}
+
+
+  <ul class="product-grid">
+    {% for product in settings.frontpage_collection.products %}
+      {% render 'card--product', product: product %}
+    {% endfor %}
+  </ul>
+
+{% else %}
+
+  <ul>
+    {% for product in collections.all.products %}
+      {% render 'card--product', product: product %}
+    {% endfor %}
+  </ul>
+
+
+{% endif %}
