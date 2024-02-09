@@ -213,7 +213,11 @@ div[data-ajax-cart-messages] {
 
 .swiper-pagination-bullet {
     background: transparent;
-    border: var(--border-white);
+    border: 1px solid var(--white) !important;
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    margin: 0 4px !important;
 }
 .swiper-pagination-bullet-active {
     background: var(--white);
@@ -324,6 +328,7 @@ div[data-ajax-cart-messages] {
             flex-direction: row;
             gap: 10vw;
             padding: 0 2.5vw;
+            position: relative;
 
             .image {
                 height: 60vh;
@@ -337,7 +342,7 @@ div[data-ajax-cart-messages] {
         }
 
         .product-data {
-            padding: 0 20px;
+            padding: 40px 20px 0px 20px;
         }
 
         // Add To Cart
