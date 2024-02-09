@@ -1,1 +1,7 @@
-{% render 'component--collection' %}
+<ul class="product-grid">
+
+    {% for product in collections.products %}
+        {% render 'card--product', product: product %}
+    {% endfor %}
+
+</ul>
