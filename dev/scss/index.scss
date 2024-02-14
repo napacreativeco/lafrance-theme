@@ -236,6 +236,11 @@ details > summary {
     height: 100%;
     z-index: -1;
     overflow: visible;
+
+    video {
+        min-width: 100vw;
+        min-height: 100vh;
+    }
 }
 
 .background-videos.mobile {
