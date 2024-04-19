@@ -28,6 +28,12 @@ body {
     font-size: 100%;
 }
 
+.desktop {
+    display: block;
+}
+.mobile {
+    display: none;
+}
 .desktop video {
     display: block;
 }
@@ -45,6 +51,16 @@ body {
         display: none;
     }
     .mobile video {
+        display: block;
+        min-width: 100%;
+        height: 100vh;
+    }
+
+
+    .desktop {
+        display: none;
+    }
+    .mobile {
         display: block;
         min-width: 100%;
         height: 100vh;
