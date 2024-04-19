@@ -22,10 +22,14 @@
     .lower {
 
         svg {
-            width: 12vw;
-            max-width: 100%;
+            width: 8vw;
+            max-width: 100px;
             display: block;
+            margin: 0 auto;
+            fill: var(--black);
+            stroke: var(--green)
         }
+
     }
 
 

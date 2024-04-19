@@ -4,7 +4,7 @@
         width: 100%;
         display: block;
         margin: 0 0 20px 0;
-        filter: drop-shadow(rgba(256, 169, 209, 1) 0px 0px 10px);
+        filter: drop-shadow(rgba(153, 245, 4, 1) 0px 0px 10px);
         position: relative;
 
         .image-two {
@@ -52,7 +52,8 @@
 .product-card:hover {
    
     h2 {
-        text-shadow: 0 0 2px rgba(256, 169, 209, 0.8), 0 0 4px rgba(256, 169, 209, 0.6), 0 0 6px rgba(256, 169, 209, 0.4), 0 0 8px rgba(256, 169, 209, 0.2);
+        // text-shadow: 0 0 2px rgba(256, 169, 209, 0.8), 0 0 4px rgba(256, 169, 209, 0.6), 0 0 6px rgba(256, 169, 209, 0.4), 0 0 8px rgba(256, 169, 209, 0.2);
+        text-shadow: 0 0 2px rgba(153, 245, 4, 0.8), 0 0 4px rgba(153, 245, 4, 0.6), 0 0 6px rgba(153, 245, 4, 0.4), 0 0 8px rgba(153, 245, 4, 0.2);
     }
 
 }

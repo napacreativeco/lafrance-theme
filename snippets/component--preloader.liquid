@@ -3,16 +3,19 @@
     <div class="preloader-wrap">
 
         <div class="background-videos desktop">
-            {{ settings.background_video | video_tag: autoplay: true, loop: true, muted: true }}
+            <video src="https://cdn.shopify.com/videos/c/o/v/36bfd032beeb4beca3774bbcd2ee56a0.mp4" autoplay loop muted></video>
+            {% comment %} {{ settings.background_video | video_tag: autoplay: true, loop: true, muted: true }} {% endcomment %}
         </div>
         <div class="background-videos mobile">
-            {{ settings.background_video_mobile | video_tag: autoplay: true, loop: true, muted: true }}
+            <video src="https://cdn.shopify.com/videos/c/o/v/d2a7862e93664ea59b74cf29b10beebe.mp4" autoplay loop muted></video>
+            {% comment %} {{ settings.background_video_mobile | video_tag: autoplay: true, loop: true, muted: true }} {% endcomment %}
         </div>
 
 
         <div class="preloader-content">
             <div class="image">
-                {% render 'icon--alien' %}
+                {% comment %} {% render 'icon--alien' %} {% endcomment %}
+                <img src="https://cdn.shopify.com/s/files/1/0453/4730/7681/files/lafrance-neon.png?v=1713372182" />
             </div>
             <div class="progress-container">
                 <div class="start">LOADING</div>

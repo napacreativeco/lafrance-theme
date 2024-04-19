@@ -8,6 +8,8 @@
   <meta charset="utf-8" />
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
 
+  <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}">
+
   <title>
   {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
   </title>
@@ -81,10 +83,12 @@
   BACKGROUNDS
   {% endcomment %}
   <div class="background-videos desktop">
-    {{ settings.background_video | video_tag: autoplay: true, loop: true, muted: true }}
+    <video src="https://cdn.shopify.com/videos/c/o/v/36bfd032beeb4beca3774bbcd2ee56a0.mp4" autoplay loop muted></video>
+    {% comment %} {{ settings.background_video | video_tag: autoplay: true, loop: true, muted: true }} {% endcomment %}
   </div>
   <div class="background-videos mobile">
-    {{ settings.background_video_mobile | video_tag: autoplay: true, loop: true, muted: true }}
+    <video src="https://cdn.shopify.com/videos/c/o/v/d2a7862e93664ea59b74cf29b10beebe.mp4" autoplay loop muted></video>
+    {% comment %} {{ settings.background_video_mobile | video_tag: autoplay: true, loop: true, muted: true }} {% endcomment %}
   </div>
 
   {% comment %} 
