@@ -86,7 +86,7 @@
     <video src="https://cdn.shopify.com/videos/c/o/v/36bfd032beeb4beca3774bbcd2ee56a0.mp4" autoplay loop muted></video>
     {% comment %} {{ settings.background_video | video_tag: autoplay: true, loop: true, muted: true }} {% endcomment %}
   </div>
-  <div class="background-videos mobile">
+  <div class="background-videos mobile mobile-video">
     <video src="https://cdn.shopify.com/videos/c/o/v/d2a7862e93664ea59b74cf29b10beebe.mp4" autoplay loop muted></video>
     {% comment %} {{ settings.background_video_mobile | video_tag: autoplay: true, loop: true, muted: true }} {% endcomment %}
   </div>
@@ -201,6 +201,13 @@
     });
   </script>
 
+
+  <script>
+    $('document').on('ready', function() {
+
+      $('.mobile-video').play();
+    });
+  </script>
 
 
   <script src="{{ 'shop.js'  | asset_url }}" defer></script>
