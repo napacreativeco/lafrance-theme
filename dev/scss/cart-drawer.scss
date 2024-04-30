@@ -42,6 +42,10 @@
         justify-content: space-between;
     }
 
+    ul.cart-items {
+        overflow-y: scroll;
+    }
+
     .cart-card {
         border: var(--border-white);
         display: flex;
